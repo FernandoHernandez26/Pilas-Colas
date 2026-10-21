@@ -19,6 +19,8 @@ class Cola {
         }
     }
 
+    // metodo para desencolar
+
     fun desencolar(): Any? {7
         if (isEmpty()) {
             return null
@@ -36,6 +38,7 @@ class Cola {
         return frente == null
     }
 
+// metodo para mostrar cola
 
     fun mostrarCola() {
         if (isEmpty()) {

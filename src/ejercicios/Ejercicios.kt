@@ -11,32 +11,34 @@ class Ejercicios {
 // EJERCICIO 1 Invertir una cadena de caracteres utilizando una pila.
 
     fun ejercicio1() {
+// Se solicita al usuario ingresar texto
         print("Introduce un texto ")
         val texto = readln()
-
+// Se crea una pila vacia
         val pila = Pila()
         for (caracter in texto) {
             pila.push(caracter)
         }
+// Se crea variable donde se guarda el texto invertido
             var invertido = ""
-            while (!pila.isEmpty()) {
+            while (!pila.isEmpty()) {   // extrae los caracteres de la paila al revez o de modo inverso
                 invertido += pila.pop().toString()
 
             }
-            println("El texto ivertido es: $invertido")
+            println("El texto ivertido es: $invertido")  // muestra el resultado por pantalla
 
         }
 
     // EJERCICIO 2  Cadena de clientes
 
     fun ejercicio2() {
-
+// Se crea cola vacia
         val cola = Cola()
 
         var opcion: Int
 
         do {
-
+// menu de opciones para que el usuario pueda interactuar
             println("\n====== COLA DE CLIENTES ======")
             println("1. Llegada")
             println("2. Atender")
@@ -45,7 +47,7 @@ class Ejercicios {
 
             print("Seleccione una opción: ")
             opcion = readln().toInt()
-
+// se realiza opciones del menu con sus respectivas salidas de texto por pantalla
             when (opcion) {
 
                 1 -> {
@@ -90,18 +92,19 @@ class Ejercicios {
 
         print("Introduce una palabra o frase: ")
 
+// con lowercase se convierte texto en minusculas y se quita espacios
         val texto = readln()
             .lowercase()
             .replace(" ", "")
 
         val pila = Pila()
         val cola = Cola()
-
+// inserta  cada caracter en anbas estructuras tanto pila como cola
         for (caracter in texto) {
             pila.push(caracter)
             cola.encolar(caracter)
         }
-
+// esta variable se define si es texto contiene una palabra palindroma
         var esPalindromo = true
 
         while (!pila.isEmpty()) {
@@ -114,7 +117,7 @@ class Ejercicios {
                 break
             }
         }
-
+// muestra el resultado al usuario
         if (esPalindromo) {
             println("La frase ES un palíndromo.")
         } else {
@@ -124,14 +127,18 @@ class Ejercicios {
 
     // EJERCICIO 4 CONVERSION DE BINARIOS
 
+
     fun ejercicio4() {
 
+//Se solicita un numero positivo al usuario para transformarlo en binario
         print("Introduce un número decimal positivo: ")
         var numero = readln().toInt()
-
+// variable para guardar el numero original del usuario
         val original = numero
-        val pila = Pila()
+        val pila = Pila()  // se crea pila para almacenar los restos de divisiones
 
+
+        // caso especial para cuando el número es 0
         if (numero == 0) {
             println("Binario: 0")
             return
@@ -145,7 +152,10 @@ class Ejercicios {
             numero /= 2
         }
         print("El número $original en binario es: ")
+//se calcula resto de la division entre 2
 
+
+        // recupera  los restos en  orden inverso
         while (!pila.isEmpty()) {
             print(pila.pop())
         }

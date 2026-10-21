@@ -6,12 +6,14 @@ package estructuras
 class Pila {
     private var cima: Nodo? = null
 
+    // metodo para poder ingresar un dato a la pila
     fun push(dato: Any) {
         val nuevo = Nodo(dato)
         nuevo.siguiente = cima
         cima = nuevo
     }
 
+    // metodo para poder sacar el ultimo dato de la pila
     fun pop(): Any? {
 
         if (isEmpty()) {
