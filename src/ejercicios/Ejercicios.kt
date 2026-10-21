@@ -51,9 +51,7 @@ class Ejercicios {
                 1 -> {
                     print("Nombre del cliente: ")
                     val nombre = readln()
-
                     cola.encolar(nombre)
-
                     println("Cliente añadido correctamente.")
                 }
 
@@ -85,6 +83,44 @@ class Ejercicios {
         } while (opcion != 4)
     }
 
+
+    // EJERCICIO 3  PALABRA PALINDROMA
+
+    fun ejercicio3() {
+
+        print("Introduce una palabra o frase: ")
+
+        val texto = readln()
+            .lowercase()
+            .replace(" ", "")
+
+        val pila = Pila()
+        val cola = Cola()
+
+        for (caracter in texto) {
+            pila.push(caracter)
+            cola.encolar(caracter)
+        }
+
+        var esPalindromo = true
+
+        while (!pila.isEmpty()) {
+
+            val desdePila = pila.pop()
+            val desdeCola = cola.desencolar()
+
+            if (desdePila != desdeCola) {
+                esPalindromo = false
+                break
+            }
+        }
+
+        if (esPalindromo) {
+            println("La frase ES un palíndromo.")
+        } else {
+            println("La frase NO es un palíndromo.")
+        }
+    }
 
 
     }
