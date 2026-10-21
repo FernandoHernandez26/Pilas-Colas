@@ -122,6 +122,36 @@ class Ejercicios {
         }
     }
 
+    // EJERCICIO 4 CONVERSION DE BINARIOS
+
+    fun ejercicio4() {
+
+        print("Introduce un número decimal positivo: ")
+        var numero = readln().toInt()
+
+        val original = numero
+        val pila = Pila()
+
+        if (numero == 0) {
+            println("Binario: 0")
+            return
+        }
+
+        while (numero > 0) {
+
+            val resto = numero % 2
+            pila.push(resto)
+
+            numero /= 2
+        }
+        print("El número $original en binario es: ")
+
+        while (!pila.isEmpty()) {
+            print(pila.pop())
+        }
+
+        println()
+    }
 
     }
 

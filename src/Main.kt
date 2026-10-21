@@ -27,6 +27,8 @@ fun main() {
             2 -> ejercicios.ejercicio2()
 
             3 -> ejercicios.ejercicio3()
+
+            4 -> ejercicios.ejercicio4()
         }
 
     } while (opcion != 5)

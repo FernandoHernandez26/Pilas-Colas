@@ -6,6 +6,8 @@ class Cola {
     private var frente: Nodo? = null
     private var final: Nodo? = null
 
+    // metodo para encolar
+
     fun encolar(dato: Any) {
         val nuevo = Nodo(dato)
         if (isEmpty()) {
