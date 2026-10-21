@@ -1,0 +1,4 @@
+package Estructuras
+
+class Nodo {
+}
