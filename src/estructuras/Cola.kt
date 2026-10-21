@@ -43,10 +43,10 @@ class Cola {
 
         var actual = frente
         while (actual != null) {
-            print("${actual.dato} ")
+            print("\n ${actual.dato} ")
             actual = actual.siguiente
         }
-        println("FIN.....")
+        println("\n Fin de la lista de espera....")
     }
 
 }

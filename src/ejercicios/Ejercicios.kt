@@ -26,6 +26,67 @@ class Ejercicios {
             println("El texto ivertido es: $invertido")
 
         }
+
+    // EJERCICIO 2  Cadena de clientes
+
+    fun ejercicio2() {
+
+        val cola = Cola()
+
+        var opcion: Int
+
+        do {
+
+            println("\n====== COLA DE CLIENTES ======")
+            println("1. Llegada")
+            println("2. Atender")
+            println("3. Mostrar cola")
+            println("4. Salir")
+
+            print("Seleccione una opción: ")
+            opcion = readln().toInt()
+
+            when (opcion) {
+
+                1 -> {
+                    print("Nombre del cliente: ")
+                    val nombre = readln()
+
+                    cola.encolar(nombre)
+
+                    println("Cliente añadido correctamente.")
+                }
+
+                2 -> {
+
+                    val cliente = cola.desencolar()
+
+                    if (cliente == null) {
+                        println("No hay clientes en espera.")
+                    } else {
+                        println("Cliente atendido: $cliente")
+                    }
+                }
+
+                3 -> {
+                    println("\nEstado actual de la cola:")
+                    cola.mostrarCola()
+                }
+
+                4 -> {
+                    println("Fin del ejercicio.")
+                }
+
+                else -> {
+                    println("Opción no válida.")
+                }
+            }
+
+        } while (opcion != 4)
+    }
+
+
+
     }
 
 

@@ -24,6 +24,7 @@ fun main() {
 
             1 -> ejercicios.ejercicio1()
 
+            2 -> ejercicios.ejercicio2()
         }
 
     } while (opcion != 5)
